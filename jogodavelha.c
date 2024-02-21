@@ -1,8 +1,10 @@
+// Jogo da Velha em C, criada com suporte do ChatGPT.
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
 
-char matrix[3][3]; 
+char matrix[3][3];
 
 char check(void);
 void init_matrix(void);
@@ -16,6 +18,7 @@ int main(void)
   char done;
 
   printf("Este é o jogo da velha.\n");
+  printf("Sua Jogada é marcada pelo 'X'.\n");
   printf("Você estará jogando contra o computador.\n");
 
   done =  ' ';
@@ -31,7 +34,7 @@ int main(void)
   } while(done== ' ');
 
   if(done=='X') printf("Você ganhou!\n");
-  else printf("Eu ganhei!!!!\n");
+  else printf("Você Perdeu!!!!\n");
   disp_matrix(); 
 
   return 0;
@@ -49,7 +52,7 @@ void get_player_move(void)
 {
   int x, y;
 
-  printf("Digite as coordenadas para o X: ");
+  printf("Digite as coordenadas para o X:\n");
   scanf("%d%*c%d", &x, &y);
 
   x--; y--;
